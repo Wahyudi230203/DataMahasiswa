@@ -1,0 +1,79 @@
+extends ../layout/base
+block content
+    section.content-header
+        h1
+            | Add Mahasiswa
+            small it all starts here
+        ol.breadcrumb
+            li
+                a(href='#')
+                    i.fa.fa-dashboard
+            li.active Here
+    section.content
+        .box
+            .box-header.with-border
+                h3.box-title
+                    | Mahasiswa
+                .box-tools.pull-right
+                    button(type='button', data-widget='collapse', datatoggle='tooltip',title='collapse').btn.btn-box-tool
+                        i.fa.fa-minus
+
+            .box-body
+                form(role='form',method='post' action='/mahasiswa/add')
+                    .row
+
+                        .col-xs-6
+                            .box-body
+                                - if (messages.msg_error)
+                                    .alert.alert-danger.alert-dismissable
+                                        button.close(type='button', datadismiss='alert', aria-hidden='true')
+                                            | ×
+                                        h4
+                                            i.icon.fa.fa-ban
+                                            | Alert!
+                                        | !{messages.msg_error}
+                                .form-group
+                                    label
+                                        | Nomor Induk Mahasiwa
+                                    input(type='text',name='nim',autofocus).form-control
+                                .form-group
+                                    label
+                                        | Nama
+                                    input(type='text',value='#{nama}',name='nama').form-control
+                                .form-group
+                                    label
+                                        | Tempat Lahir
+                                    input(type='text',name='tmptlhr').form-control
+                                .form-group
+                                    label
+                                        | Tanggal Lahir
+                                    input(type='text',name='tgllhr').form-control
+                                .form-group
+                                    label
+                                        | Jenis Kelamin
+                                    input(type='text',name='jk').form-control
+                                .form-group
+                                    label
+                                        | Alamat
+                                    input(type='text',name='alamat').form-control
+                                .form-group
+                                    label
+                                        | Jurusan
+                                    input(type='text',name='jurusan').form-control
+                                .form-group
+                                    label
+                                        | Kelas
+                                    input(type='text',name='kelas').form-control
+                                .form-group
+                                    label
+                                        | Semester
+                                    input(type='text',name='semester').form-control
+                                .form-group
+                                    label
+                                        | Keterangan
+                                    input(type='text',name='ket').form-control
+                                .box-footer
+                                    button(type='submit').btn.btn-primary
+                                        | Submit
+                                    a(href='/mahasiswa').btn.btn-primary.pullright
+                                        | Back
